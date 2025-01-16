@@ -1,0 +1,130 @@
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: #bb57da70;
+  background-image: linear-gradient(to bottom right, #8c499e70, #9635d470),
+    url("roses.svg");
+  animation: pan 60s linear infinite;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: block;
+  justify-content: center;
+}
+
+@keyframes pan {
+  0% {
+    background-position: center 0;
+  }
+  100% {
+    background-position: center 100vh;
+  }
+}
+
+.webtitle {
+  text-align: center;
+  display: block;
+  background-color: #c699c6;
+  padding: 25px;
+  border-radius: 0 0 10px 10px;
+  margin: 0 45vh;
+  font-size: 46;
+  z-index: 2;
+}
+
+.infoblock {
+  text-align: left;
+  display: flex;
+  background-color: #c699c6;
+  padding: 35px;
+  border-radius: 10px;
+  margin: 0 45vh;
+  position: relative;
+  font-size: 24;
+  margin-top: 8vh;
+}
+
+.title {
+  position: absolute;
+  top: -2.5vh;
+  left: 3vh;
+  font-size: 36;
+}
+
+.image {
+  z-index: 3;
+  display: block;
+  margin-left: auto;
+  margin-right: 5vh;
+  width: 25vh;
+  height: 25vh;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.image:hover {
+  transform: scale(2.1);
+}
+
+.sidelink {
+  display: inline-block;
+  margin-left: 2vh;
+  background-color: #352630;
+  margin-left: 155vh;
+  top: 10vh;
+  padding: 10px 20px 70vh;
+  border-radius: 10px;
+  position: absolute;
+
+  a,
+  h2 {
+    display: block;
+    margin-top: 2vh;
+    text-align: center;
+    color: #d3d1d4;
+  }
+}
+
+.sideblock {
+  background-color: #352630;
+  padding: 5vh 25px 89.05vh 12vh;
+  display: inline-block;
+  top: -1vh;
+  left: -1vh;
+  position: absolute;
+
+  .discord {
+    position: absolute;
+    left: 2vh;
+    top: 12vh;
+  }
+
+  a,
+  h2 {
+    display: block;
+    margin-top: 2vh;
+    position: relative;
+    left: -4vh;
+    color: #d3d1d4;
+  }
+}
+
+p,
+a,
+h1,
+h2 {
+  font-family: "JetBrains Mono";
+  color: #2a2442;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff2/JetBrainsMono-Bold.woff2")
+      format("woff2"),
+    url("https://cdn.jsdelivr.net/gh/JetBrains/JetBrainsMono/web/woff/JetBrainsMono-Bold.woff")
+      format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
