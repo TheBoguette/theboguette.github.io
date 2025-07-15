@@ -21,6 +21,34 @@ body {
   }
 }
 
+.infoblock {
+  container-name: card;
+  container-type: inline-size;
+  background-color: #c699c6;
+  border-radius: 10px;
+  padding: clamp(10px, 5px + 1.33cqw, 20px);
+}
+
+.infocontainer {
+  container-name: main;
+  container-type: inline-size;
+}
+
+.grid {
+  display: grid;
+  grid-column: auto;
+  grid-auto-columns: 2fr;
+  gap: 3rem;
+
+  position: relative;
+  border-radius: 10px;
+  padding: 25px;
+  margin: 0 25rem;
+  font-size: clamp(14px, 10px + 1.33cqw, 20px);
+
+  z-index: 1;
+}
+
 .webtitle {
   text-align: center;
   display: block;
@@ -32,58 +60,59 @@ body {
   z-index: 2;
 }
 
-.infoblock {
-  text-align: left;
-  display: flex;
-  background-color: #c699c6;
-  padding: 35px;
-  border-radius: 10px;
-  margin: 0 45vh;
-  position: relative;
-  font-size: 24;
-  margin-top: 8vh;
-}
-
-.title {
-  position: absolute;
-  top: -2.5vh;
-  left: 3vh;
-  font-size: 36;
-}
-
-.image {
-  z-index: 3;
-  display: block;
-  margin-left: auto;
-  margin-right: 5vh;
-  width: 25vh;
-  height: 25vh;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+@container main (min-width: 100px) {
+  .infoblock {
+    position: relative;
+    font-size: clamp(14px, 10px + 1.33cqw, 20px);
+  }
+  @container card (min-width: 80px) {
+    .title {
+      position: relative;
+      text-align: center;
+      font-size: clamp(16px, 15px + 1.33cqw, 25px);
+    }
+    .image {
+      z-index: 3;
+      margin-left: clamp(75cqw, 50cqw + 10rem, 25cqw);
+      margin-bottom: clamp(-20cqw, 10cqw + 2rem, 2cqw);
+      width: clamp(20cqw, 2cqw + 2rem, 25cqw);
+      height: clamp(20cqw, 2cqw + 4rem, 30cqw);
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    }
+  }
 }
 
 .image:hover {
   transform: scale(2.1);
 }
 
-.sidelink {
-  display: inline-block;
-  margin-left: 2vh;
-  background-color: #352630;
-  margin-left: 155vh;
-  top: 10vh;
-  padding: 10px 20px 70vh;
-  border-radius: 10px;
-  position: absolute;
+.rightside {
+  container: right / inline-size;
+}
 
-  a,
-  h2 {
-    display: block;
-    margin-top: 2vh;
-    text-align: center;
-    color: #d3d1d4;
+@container right (min-width: 80px) {
+  .sidelink {
+    display: inline-block;
+    margin-left: clamp(85cqw, 50cqw + 10rem, 90cqw);
+    background-color: #352630;
+    top: clamp(1cqw, 5cqw + 10rem, 4cqw);
+    padding: clamp(10px, 5px + 1.33cqw, 20px);
+    border-radius: 10px;
+    position: absolute;
+
+    a,
+    h2 {
+      display: block;
+      margin-top: 2vh;
+      text-align: center;
+      color: #d3d1d4;
+    }
   }
+}
+
+.sidelink {
 }
 
 .sideblock {
